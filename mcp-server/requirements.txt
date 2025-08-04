@@ -1,0 +1,5 @@
+geopy==2.4.1
+asyncio==3.4.3
+dotenv==0.9.9
+requests==2.32.4
+fastmcp==2.11.0

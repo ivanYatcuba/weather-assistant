@@ -1,0 +1,23 @@
+services:
+  agent:
+    container_name: agent
+    env_file: ./.env
+    build:
+      context: ./agent
+      dockerfile: ./Dockerfile
+  mscp-server:
+    container_name: mcpserver
+    env_file: ./.env
+    build:
+      context: ./mcp-server
+      dockerfile: ./Dockerfile
+  ui:
+    container_name: ui
+    env_file: ./.env
+    depends_on:
+      - agent
+    build:
+      context: ./ui
+      dockerfile: ./Dockerfile
+    ports:
+      - "8501:8501"
